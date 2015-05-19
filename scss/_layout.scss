@@ -1,0 +1,23 @@
+.row-wrapper {
+  @include row(); //row makes sure that floats are cleared and a clean "block" display is applied.
+
+  .outer-container {
+    @include outer-container; //outer-container marks items that contain our columns. These items shall be constrained to the grid's max-width (amongst other things that outer-container provides).
+    header{
+    	padding-top: 1.3em;
+    	padding-bottom: 1.3em;
+    	nav{
+    		float: right;
+    		a{
+    			font-size: 18px;
+  			  color: #E3857D;
+  			  text-transform: uppercase;
+  			  margin-left: 40px;
+    		}
+    	}
+    }
+  }  
+  &:nth-child(odd) {
+    background: $row-background;
+  }
+}

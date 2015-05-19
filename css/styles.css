@@ -549,4 +549,31 @@ picture {
   margin: 0;
   max-width: 100%; }
 
+.row-wrapper {
+  display: block; }
+  .row-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .row-wrapper .outer-container {
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto; }
+    .row-wrapper .outer-container::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .row-wrapper .outer-container header {
+      padding-top: 1.3em;
+      padding-bottom: 1.3em; }
+      .row-wrapper .outer-container header nav {
+        float: right; }
+        .row-wrapper .outer-container header nav a {
+          font-size: 18px;
+          color: #E3857D;
+          text-transform: uppercase;
+          margin-left: 40px; }
+  .row-wrapper:nth-child(odd) {
+    background: #F2EEDA; }
+
 /*# sourceMappingURL=styles.css.map */
