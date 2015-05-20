@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -392,7 +393,10 @@ button,
   .button:hover,
   .button:focus {
     background-color: #d54a3e;
-    color: #fff; }
+    color: #fff;
+    -webkit-transition: background-color 0.5s ease 0s;
+    -moz-transition: background-color 0.5s ease 0s;
+    transition: background-color 0.5s ease 0s; }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
   button:disabled,
   .button:disabled {
@@ -500,6 +504,15 @@ dl {
     margin-top: 0.75em; }
   dl dd {
     margin: 0; }
+
+li:before {
+  content: "›";
+  color: #E3857D; }
+
+li a {
+  padding-left: 7px;
+  color: #594C4F;
+  font-size: 1.375em; }
 
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
@@ -626,7 +639,7 @@ article.teaser--top {
   width: 65.14523%;
   margin-left: 17.42739%;
   margin-top: 88px;
-  margin-bottom: 79px; }
+  margin-bottom: 68px; }
   article.teaser--top:last-child {
     margin-right: 0; }
   @media screen and (max-width: 480px) {

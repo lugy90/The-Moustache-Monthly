@@ -23,6 +23,7 @@ button,
   &:focus {
     background-color: darken($action-color, 15%);
     color: #fff;
+    @include transition(background-color 0.5s ease 0s);
   }
 
   &:disabled {
