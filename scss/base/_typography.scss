@@ -7,19 +7,31 @@ body {
   line-height: $base-line-height;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1{
   font-family: $heading-font-family;
-  font-size: $base-font-size;
+  font-size: $heading1-font-size;
   line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+  margin: 2px 0 20px;
+  text-transform: uppercase;
+}
+
+h2,
+h3 {
+  font-size: $heading2-font-size;
+  margin: 2px 0 10px;
+}
+h3 {
+  color:$red;
+  text-transform: none;
+}
+h5 {
+  color:$red;
+  font-size:$article-font-size;
+  margin: 0 0 8px 0;
 }
 
 p {
+  font-size:$article-font-size;
   margin: 0 0 $small-spacing;
 }
 
@@ -53,3 +65,9 @@ picture {
   margin: 0;
   max-width: 100%;
 }
+
+.meta {
+  color: $light-gray;
+  text-transform: uppercase;
+  opacity:0.5;
+  }

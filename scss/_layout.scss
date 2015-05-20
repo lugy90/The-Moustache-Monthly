@@ -1,23 +1,116 @@
+
+/************ General Page Elements */
 .row-wrapper {
   @include row(); //row makes sure that floats are cleared and a clean "block" display is applied.
 
   .outer-container {
     @include outer-container; //outer-container marks items that contain our columns. These items shall be constrained to the grid's max-width (amongst other things that outer-container provides).
-    header{
-    	padding-top: 1.3em;
-    	padding-bottom: 1.3em;
-    	nav{
-    		float: right;
-    		a{
-    			font-size: 18px;
-  			  color: #E3857D;
-  			  text-transform: uppercase;
-  			  margin-left: 40px;
-    		}
-    	}
-    }
+
   }  
   &:nth-child(odd) {
     background: $row-background;
   }
 }
+
+/************ Navigation */
+  header{
+  	
+  	padding-top: 1.3em;
+  	padding-bottom: 1.3em;
+  	
+  	nav{
+  		float: right;
+  		
+  		a{
+  			font-size: 18px;
+			  color: #E3857D;
+			  text-transform: uppercase;
+			  margin-left: 40px;
+  		}
+  	}
+  }
+
+/************ Teaser Top */
+article.teaser--top {
+  @include span-columns(8);  //span-columns() takes the number of columns that the item should cover.
+  @include shift(2);  //shift() takes the number of columns you want to skip.
+  
+
+  margin-top:88px;
+  margin-bottom:79px;
+
+  @include media($mobile) {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
+  .teaser-image{
+    @include size($teaser-size);
+    @include retina-image('../img/chevron-teaser', $teaser-size);                  
+    background-position:center bottom;
+    background-repeat:no-repeat;
+    border-radius:8px;
+    margin-bottom:18px;
+  }
+
+  .continue-reading a {
+    padding-right: 25px;
+    background: url(../img/icon-arrow.svg) center right no-repeat;
+  }
+}
+
+/************ Recent Posts */
+#recent-posts {
+  @include shift(2);
+  @include span-columns(8);
+  @include pad(10px 0px 75px 0px);
+  
+  @include media($mobile) {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
+  .teaser--recent {
+    margin-top:50px;
+  }
+  
+  .meta {
+    float:right;
+    font-size: 0.875em;
+    @include media($mobile){
+      float:none;
+    }
+  }
+
+  .continue-reading a {
+    padding-right: 25px;
+    background: url(../img/icon-arrow.svg) center right no-repeat;
+  }
+  
+}
+
+/************ Subscribe */
+%whitebox {
+  @include shift(1);
+  @include span-columns(10);
+  @include pad(48px 0px 45px 0px);
+  margin-bottom:105px;  
+  background:white;
+  border-top:4px solid $red;  
+}
+
+#subscribe {
+  @extend %whitebox;
+  
+  .note {
+    float:left;
+    margin-left:$column;
+  }
+  
+  .follow {
+    float:right;
+    margin-right:$column;
+    padding-top: 10px;
+  }
+}
+
