@@ -153,3 +153,53 @@ footer {
   line-height:72px;
   text-align: center;
 }
+
+/************ Article Detail */
+#full-article {
+  @include span-columns(12);
+  padding-bottom:50px;
+    
+  #article-content {
+    @include shift-in-context(1 of 12);
+    @include span-columns(10 of 12);
+  }
+
+  %article-images {
+    border-radius:$base-border-radius;    
+  }
+  #main-image {
+    @extend %article-images;
+    margin:72px 0px 60px 0px;
+    @include retina-image-container(chevron-main-image, $main-image-size, 'jpg');
+  }
+  .content-image {
+    @extend %article-images;
+    margin:15px 0px 27px 0px;
+    @include retina-image-container('image-article-content', $content-image-size, 'jpg');
+  } 
+}
+
+/************ Author */
+#author {
+  @include shift(1);
+  @include span-columns(10);
+  padding-top:75px;
+      
+  .author-icon {
+    float:left;
+    margin-right:23px;
+    @include retina-image-container(author, $author-image-size, jpg);
+    border-radius:50%;
+  }
+}
+
+/************ Recommended Reading */
+#recommended-reading {
+  @extend %whitebox;
+  margin-top:55px;
+  
+  h5, 
+  ul {
+    margin-left:($column+$gutter);
+  }
+}

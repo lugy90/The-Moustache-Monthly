@@ -3,5 +3,9 @@
 @import "base/grid-settings";
 @import "lib/neat/neat";
 @import "base/base";
+
+/***** Custom Mixins *****/
 @import "base/mixins";
+
+/***** Custom Layout Styles *****/
 @import "layout";
