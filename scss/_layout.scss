@@ -118,3 +118,38 @@ article.teaser--top {
   }
 }
 
+/************ About */
+#about {
+  @include shift(1);
+  @include span-columns(9);
+  @include pad(79px 0 140px 0);
+
+  %tower-common {
+    margin-top:30px;
+  }
+
+  .tower-icon {
+    @extend %tower-common;
+    height:147px;
+    @include span-columns(2 of 9);
+    @include media($mobile) {
+      @include span-columns(9 of 9);
+      text-align:center;
+    }
+    @include retina-image('../img/icon-tower', 114px 147px);
+    background-repeat:no-repeat;
+    background-position:center center;
+  }
+  p {
+    @extend %tower-common;
+  }
+}
+
+/************ Footer */
+footer {
+  @include span-columns(12);
+  font-size:$small-font-size;
+  height:72px;
+  line-height:72px;
+  text-align: center;
+}
